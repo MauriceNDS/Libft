@@ -6,7 +6,7 @@
 /*   By: adel-sol <adel-sol@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:41:38 by adel-sol          #+#    #+#             */
-/*   Updated: 2020/11/26 12:20:32 by adel-sol         ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 17:54:20 by adel-sol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ char		*ft_strnstr(const char *src, const char *key, size_t len)
 	i = 0;
 	if (!*key)
 		return ((char *)src);
-	if (!*src)
-		return (NULL);
-	while (i < len)
+	while (src[i] && i < len)
 	{
 		while ((i + j < len) && src[i + j] == key[j] && src[i + j])
 			j++;

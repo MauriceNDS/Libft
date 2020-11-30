@@ -6,7 +6,7 @@
 /*   By: adel-sol <adel-sol@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 09:43:51 by adel-sol          #+#    #+#             */
-/*   Updated: 2020/11/26 15:13:38 by adel-sol         ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 18:00:03 by adel-sol         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*cpy;
 
-	if (!lst)
-		return ;
-	cpy = *lst;
-	while (cpy)
+	while (*lst)
 	{
-		ft_lstdelone(cpy, del);
-		cpy = cpy->next;
+		cpy = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = cpy;
 	}
-	*lst = NULL;
 }
